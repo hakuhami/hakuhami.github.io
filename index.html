@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>朱 博瑄 / Hakusen Shu</title>
+  <style>
+    /* ----- リンク（a 要素）共通スタイル（右側も含む） ----- */
+    a {
+      color: #1976d2;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      padding: 2px 1px;  /* 少し余裕を持たせて背景効果が見えるように */
+      border-radius: 4px;
+    }
+
+    /* ホバー時の効果：色変化、下線、背景色変化 */
+    a:hover {
+      color: #0d47a1;
+      background-color: rgba(25, 118, 210, 0.1);
+      text-decoration: underline;
+    }
+
+    /* 左側 Links 内リンク（ブロック表示） */
+    .sidebar .links a {
+      display: block;
+      margin: 8px 0;
+      /* color, padding, border-radius, transition は上記 a に継承 */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      color: #333;
+      background-color: #fafafa;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: #ffffff;
+      border-right: 1px solid #e0e0e0;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .sidebar img.profile-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .sidebar h1 {
+      margin: 20px 0 8px;
+      font-size: 26px;
+      font-weight: 600;
+      color: #222;
+    }
+    .sidebar p {
+      margin: 0;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    .sidebar .contact h3,
+    .sidebar .links h3 {
+      margin-top: 30px;
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #666;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+    }
+
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 40px;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+    .section h2 {
+      margin-bottom: 16px;
+      font-size: 24px;
+      font-weight: 500;
+      color: #222;
+      position: relative;
+    }
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: #1976d2;
+      margin-top: 8px;
+    }
+
+    .subsection {
+      margin-top: 24px;
+    }
+    .subsection h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #1976d2;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <!-- 写真 -->
+    <img class="profile-photo" src="profile.jpg" alt="プロフィール写真" />
+    <!-- 氏名・肩書 -->
+    <h1>朱 博瑄<br>Hakusen Shu</h1>
+    <p>筑波大学<br>人間総合科学学術院人間総合科学研究群情報学学位プログラム<br>修士1年</p>
+
+    <!-- 連絡先 -->
+    <div class="contact">
+      <h3>Contact</h3>
+      <p>Email: s2521703[at]u.tsukuba.ac.jp</p>
+    </div>
+
+    <!-- 関連リンク -->
+    <div class="links">
+      <h3>Links</h3>
+      <a href="https://github.com/hakuhami" target="_blank">GitHub</a>
+      <a href="https://x.com/15sen3haku" target="_blank">X</a>
+      <a href="https://scholar.google.co.jp/citations?hl=ja&user=GrOxa0QAAAAJ" target="_blank">Google Scholar</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <!-- About Me -->
+    <div class="section" id="about">
+      <h2>About Me</h2>
+      <p>
+        Welcome to my HP!<br>筑波大学の修士1年です。自然言語処理・機械学習に関する研究や、エンジニアとしてのそれらの社会実装に関心があります。現在大学では、LLMが持つ価値観に関する研究を行っています。
+      </p>
+    </div>
+
+    <!-- Interests -->
+    <div class="section" id="interests">
+      <h2>Interests</h2>
+      <ul>
+        <li>LLM(が持つ価値観の)アライメント</li>
+        <li>LLMマルチエージェント</li>
+        <li>RAG</li>
+        <li>LLM-as-a-judge</li>
+        <li>AIエージェントの社会実装 / コンテキストエンジニアリング</li>
+      </ul>
+    </div>
+
+    <!-- Education -->
+    <div class="section" id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>修士 (情報学) <b>(現在)</b><br>筑波大学 人間総合科学学術院人間総合科学研究群情報学学位プログラム<br><a href="https://cu.slis.tsukuba.ac.jp/" target="_blank">コミュニケーション理解研究室</a><br>2025.4 - Present</li>
+        <li>学士 (図書館情報学)<br>筑波大学 情報学群知識情報・図書館学類<br><a href="https://cu.slis.tsukuba.ac.jp/" target="_blank">コミュニケーション理解研究室</a><br>2021.4 - 2025.3</li>
+        <li>高校<br>宮城県立仙台第二高等学校<br>2017.4 - 2020.3</li>
+      </ul>
+    </div>
+
+    <!-- Experiences -->
+    <div class="section" id="experiences">
+      <h2>Experiences</h2>
+      <ul>
+        <li>
+          サイバーエージェント/AI Shift ミッション型インターン (機械学習エンジニア/リサーチャー)<br>2025.7 - 2025.9
+        </li>
+        <li>
+          アドバイザーナビ 長期インターン (ソフトウェアエンジニア)<br>2024.2 - Present 
+        </li>
+      </ul>
+    </div>
+
+    <!-- Publications -->
+    <div class="section" id="publications">
+      <h2>Publications</h2>
+
+      <div class="subsection">
+        <h3>International Conferences / Workshop (Peer-reviewed)</h3>
+        <ul>
+          <li>Yohei Seki, <u>Hakusen Shu</u>, Anaïs Lhuissier, Hanwool Lee, Juyeon Kang, Min-Yuh Day, Chung-Chi Chen<br><b>ML-Promise: A Multilingual Dataset for Corporate Promise Verification</b><br>Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025), 2025.</li>
+          <li>Chung-Chi Chen, Yohei Seki, <u>Hakusen Shu</u>, Anaïs Lhuissier, Juyeon Kang, Hanwool Lee, Min-Yuh Day, Hiroya Takamura<br><b>SemEval-2025 Task 6: Multinational, Multilingual, Multi-Industry Promise Verification</b><br>Proceedings of the 19th International Workshop on Semantic Evaluation (SemEval-2025), Vienna, Austria. Association for Computational Linguistics<br><a href="https://sites.google.com/view/promiseeval/promiseeval" target="_blank">(Task's Official Page)</a></li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3>Domestic Conference / Symposium</h3>
+        <ul>
+          <li><u>朱 博瑄</u>, 長澤 春希, 栗原 健太郎, 村田 栄樹<br><b>AIエージェントにおけるコンテキスト圧縮手法の定量的比較評価</b><br>第20回言語処理若手シンポジウム (YANS2025), S1-P49, 2025年9月.<br><a href="https://drive.google.com/file/d/1dpjAQe0hA2p9UfylMwjvBk18zF4qxmN2/view?usp=sharing" target="_blank">[poster]</a></li>
+          <li><u>朱 博瑄</u>, 関 洋平, 欅 惇志, 柏野 和佳子, 神門 典子<br><b>企業レポート中の ESG に関する公約の検証可能性の判別</b><br>第17回データ工学と情報マネジメントに関するフォーラム (DEIM 2025), 3A-04, 2025年3月.<br><a href="https://drive.google.com/file/d/1awdMdGJqhmauzeFiDHnNzmRHieNis_YL/view?usp=drive_link" target="_blank">[paper]</a> <a href="https://drive.google.com/file/d/1qMEgOUme0Q2_rJTy6tNKd8R-CJ-fZYSi/view?usp=drive_link" target="_blank">[poster]</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Others -->
+    <div class="section" id="others">
+      <h2>Others</h2>
+      <ul>
+        <li><a href="" target="_blank">サイバーエージェント/AI Shift ミッション型インターンを経てのTech Blog</a><br>2025.10</li>
+        <li><a href="https://note.com/15sen3haku/n/n21a49b02e319" target="_blank">enPiT(通念でのチーム開発を行う筑波大学のプログラム)体験記</a><br>2024.2</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
