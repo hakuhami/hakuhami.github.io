@@ -131,14 +131,25 @@
     @media (max-width: 768px) {
       body {
         flex-direction: column;
+        height: auto;           /* 高さ自動に */
+        overflow: visible;      /* overflow を可視に */
       }
       .sidebar {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #e0e0e0;
+        /* 高さを固定しない。内容に応じて伸びるように */
+        position: relative;
+        z-index: 10;             /* 前面に出したいなら指定、重なりを制御 */
       }
       .main {
         padding: 20px;
+        /* 幅100%、高さ自動にして本文が見えるように */
+        width: 100%;
+        flex: none;
+        height: auto;
+        overflow: visible;       /* 隠さない */
+        z-index: 1;
       }
     }
   </style>
@@ -172,7 +183,7 @@
     <div class="section" id="about">
       <h2>About Me</h2>
       <p>
-        Welcome to my HP!<br>筑波大学の修士1年です。自然言語処理・機械学習に関する研究や、エンジニアとしてのそれらの社会実装に関心があります。現在大学では、LLMが持つ価値観に関する研究を行っています。
+        Welcome to my HP!<br>筑波大学の修士1年です。自然言語処理・機械学習に関する研究や、エンジニアとしてのそれらの社会実装に関心があります。<br>現在大学では、LLMが持つ価値観に関する研究を行っています。
       </p>
     </div>
 
